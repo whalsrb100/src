@@ -16,6 +16,7 @@ else
 
 fi
 
+git config credential.helper store
 git add -A
 git commit -m "auto commit"
 git push origin master
