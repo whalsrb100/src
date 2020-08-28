@@ -21,16 +21,24 @@ cat("drwtNo6",",",file="ltresult.txt",append=TRUE)
 cat("bnusNo","\n",file="ltresult.txt",append=TRUE)
 
 base <- 'https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo='
-num <- '900'
+
+for(i in 1:925) {
+num <- i
 url <- paste(base, num, sep='')
 urltohtml <- as.character(read_html(url[1]))
 rest = fromJSON(strsplit(strsplit(urltohtml,split='<p>')[[1]][2],split="</p>")[[1]][1])
-cat("[",rest$drwNoDate,"] ( seq:",rest$drwNo,")\n",file="/home/rstudio/test_save01.txt")
-cat("(No1)->",rest$drwtNo1,", ",file="/home/rstudio/test_save01.txt")
-cat("(No2)->",rest$drwtNo2,", ",file="/home/rstudio/test_save01.txt")
-cat("(No3)->",rest$drwtNo3,", ",file="/home/rstudio/test_save01.txt")
-cat("(No4)->",rest$drwtNo4,", ",file="/home/rstudio/test_save01.txt")
-cat("(No5)->",rest$drwtNo5,", ",file="/home/rstudio/test_save01.txt")
-cat("(No6)->",rest$drwtNo6,", ",file="/home/rstudio/test_save01.txt")
-cat("(Bonus)->",rest$bnusNo,"\n",file="/home/rstudio/test_save01.txt")
-
+cat( rest$totSellamnt,",",file="ltresult.txt",append=TRUE)
+cat( rest$returnValue,",",file="ltresult.txt",append=TRUE)
+cat( rest$drwNoDate,",",file="ltresult.txt",append=TRUE)
+cat( rest$firstWinamnt,",",file="ltresult.txt",append=TRUE)
+cat( rest$firstPrzwnerCo,",",file="ltresult.txt",append=TRUE)
+cat( rest$firstAccumamnt,",",file="ltresult.txt",append=TRUE)
+cat( rest$drwNo,",",file="ltresult.txt",append=TRUE)
+cat( rest$drwtNo1,",",file="ltresult.txt",append=TRUE)
+cat( rest$drwtNo2,",",file="ltresult.txt",append=TRUE)
+cat( rest$drwtNo3,",",file="ltresult.txt",append=TRUE)
+cat( rest$drwtNo4,",",file="ltresult.txt",append=TRUE)
+cat( rest$drwtNo5,",",file="ltresult.txt",append=TRUE)
+cat( rest$drwtNo6,",",file="ltresult.txt",append=TRUE)
+cat( rest$bnusNo,"\n",file="ltresult.txt",append=TRUE)
+}
