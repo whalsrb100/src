@@ -9,7 +9,7 @@ num <- '900'
 url <- paste(base, num, sep='')
 urltohtml <- as.character(read_html(url[1]))
 rest = fromJSON(strsplit(strsplit(urltohtml,split='<p>')[[1]][2],split="</p>")[[1]][1])
-cat("[",rest$drwNoDate,"] ( seq:",num,")\n")
+cat("[",rest$drwNoDate,"] ( seq:",num,")\n",file="/home/rstudio/test_save01.txt")
 cat("(No1)->",rest$drwtNo1,", ")
 cat("(No2)->",rest$drwtNo2,", ")
 cat("(No3)->",rest$drwtNo3,", ")
