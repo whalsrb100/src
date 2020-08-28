@@ -15,4 +15,4 @@ rest$drwtNo3
 rest$drwtNo4
 rest$drwtNo5
 rest$drwtNo6
-print("BonusNo.",rest$bnusNo)
+cat("BonusNo:",rest$bnusNo)
