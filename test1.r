@@ -9,4 +9,4 @@ worldkorea_login <- 'https://mticket.lotteworld.com/web/main/loginView.do?reUrl=
 lotto_base <- 'https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo='
 lotto_num <- '900'
 lotto_url <- paste(lotto_base, lotto_num, sep='')
-read_html(lotto_url[1])
+Result <- read_html(lotto_url[1])
