@@ -11,3 +11,4 @@ num <- '900'
 lotto_url <- paste(lotto_addr, num, sep='')
 
 print(lotto_url)
+print("1234")
